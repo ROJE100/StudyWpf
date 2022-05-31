@@ -7,10 +7,12 @@ namespace WpfBikeShop
         public double Speed { get; set; }
         public Color Color { get; set; }
        
+       
         public Car()
         {
             
         }
+      
     }
     
 }

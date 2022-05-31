@@ -16,20 +16,19 @@ using System.Windows.Shapes;
 namespace WpfBikeShop
 {
     /// <summary>
-    /// MainWindow.xaml에 대한 상호 작용 논리
+    /// ProductManagement.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ProductManagement : Page
     {
-        public MainWindow()
+        ProductsFactory factory = new ProductsFactory();
+        public ProductManagement()
         {
             InitializeComponent();
-
-            InitClass();
         }
 
-        private void InitClass()
+        private void txtSearch_TextChanged(object sender,TextChangedEventArgs e)
         {
-            Car car = new Car();
+            dgrProducts.ItemsSource = factory.FindProducts(txtSearch.Text);
         }
     }
 }

@@ -1,0 +1,66 @@
+﻿<Page x:Class="WpfBikeShop.Layouts"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfBikeShop"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Layouts">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="60" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="80"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="0" Grid.Column="0" Content="A" />
+        <Button Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Grid.RowSpan="2"  Content="B" />
+
+        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Horizontal">
+            <Button  Content="C" Width="200" />
+            <Button  Content="D" Width="200" />
+        </StackPanel>
+
+
+        <ListBox Grid.Row="2" Grid.Column="1">
+            <Label Content="Element1" />
+            <Label Content="Element2" />
+            <GroupBox Header="Element3">
+                세번째 엘리먼트
+            </GroupBox>
+        </ListBox>
+
+        <ComboBox Grid.Row="3" Grid.Column="1">
+            <Label Content="Element1" />
+            <Label Content="Element2" />
+            <GroupBox Header="Element3">
+                세번째 엘리먼트
+            </GroupBox>
+        </ComboBox>
+       
+
+            <!--<한영역에 두개를 대입 불가능하다는 내용>-->
+
+            <!--<Canvas Width="300" Height="300" Background="Orange">
+            <Button Content="Hello World" Margin="5" Canvas.Left="290" Canvas.Top="50" />
+        </Canvas>-->
+        <!--<WrapPanel Background="Orange" Margin="0,10,10,30">
+            <Button Content="A" Canvas.Left="0" Canvas.Top="0" DockPanel.Dock="Top"/>
+            <Button Content="B" Canvas.Left="0" Canvas.Top="25" />
+            <Button Content="C" Canvas.Left="25" Canvas.Top="25" DockPanel.Dock="Right" />
+            <Button Content="D" Canvas.Left="50" Canvas.Top="0" />-->
+            
+                <!--<UniformGrid 쓰지마>-->
+            <!--<StackPanel ,Grid 를 실무에서 많이 사용 나머지는 거의 안씀></StackPanel>-->
+
+        <!--</WrapPanel>-->
+        
+    </Grid>
+</Page>

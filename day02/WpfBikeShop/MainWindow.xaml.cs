@@ -28,8 +28,17 @@ namespace WpfBikeShop
         }
 
         private void InitClass()
+
         {
-            Car car = new Car();
+            Human driver = new Human
+            {
+                Firstname = "Nick",     //xaml의 local:Human 형식과 동일
+                HasDrivingLicense = true
+        };
+            Car car = new Car();        //xaml의 car와 동일
+            car.Speed = 100;
+            car.Color = Colors.Tomato;
+
         }
     }
 }
