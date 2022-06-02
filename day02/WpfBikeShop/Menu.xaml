@@ -16,7 +16,9 @@
 
         <StackPanel  Grid.Row="0" Grid.Column="0" Orientation="Horizontal"
                      HorizontalAlignment="Center">
-            <Button x:Name="btnProducts" Width="200" Margin="10" Content="Products" FontSize="25" Click="btnProducts_Click" />
+            <Button x:Name="btnProducts" Width="200" Margin="10" Height="100" 
+                    Style="{StaticResource niceButton}"
+                    Content="Products" FontSize="25" Click="btnProducts_Click" />
             <Button x:Name="btnLiveSupport" Width="200" Margin="10" Content="Live Support" FontSize="25" Click="btnLiveSupport_Click" />
             <Button x:Name="btnEmailSupport" Width="200" Margin="10" Content="Email Support" FontSize="25" Click="btnEmailSupport_Click" />
         </StackPanel>
