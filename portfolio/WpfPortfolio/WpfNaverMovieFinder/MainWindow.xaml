@@ -75,8 +75,7 @@
                Source="No.Picture.jpg" Margin="10,60"/>
         
         <!--버튼 영역-->
-        <StackPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal"
-                    HorizontalAlignment="Stretch">
+        <StackPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal">
             <Button x:Name="btnAddWatchList" Content="즐겨찾기 추가" Margin="10"
                     Width="150" FontSize="12" Click="btnAddWatchList_Click" >
                 <Button.ContentTemplate>
