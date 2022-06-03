@@ -13,11 +13,18 @@
  
  <br/>
  
- ![NaverMovieFinder]https://github.com/ROJE100/StudyWpf/blob/main/capture/KakaoTalk_20220602_171750721.png?raw=true
+ ![NaverMovieFinder](https://github.com/ROJE100/StudyWpf/blob/main/capture/KakaoTalk_20220602_171750721.png?raw=true)
  실행화면
  
  <br/>
  
- ![YoutubePlay]https://github.com/ROJE100/StudyWpf/blob/main/capture/KakaoTalk_20220603_160559594.png?raw=true
+ ![YoutubePlay](https://github.com/ROJE100/StudyWpf/blob/main/capture/KakaoTalk_20220603_160559594.png?raw=true)
  검색영화 예고편보기 실행화면
  
+<br/>
+
+## Naver 뉴스검색
+- WPF(.NET Framwork 4.7.2 / C#)
+- MahApp.Metro Metro UI/Modern UI
+- Newtonsoft.json
+- Naver OpenAPI
