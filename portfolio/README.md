@@ -18,6 +18,6 @@
  
  <br/>
  
- ![YoutubePlay]
+ ![YoutubePlay]https://github.com/ROJE100/StudyWpf/blob/main/capture/KakaoTalk_20220603_160559594.png?raw=true
  검색영화 예고편보기 실행화면
  
