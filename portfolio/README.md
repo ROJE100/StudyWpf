@@ -13,7 +13,7 @@
  
  <br/>
  
- ![NaverMovieFinder](https://github.com/ROJE100/StudyWpf/blob/main/capture/KakaoTalk_20220602_171750721.png?raw=true)
+ ![NaverMovieFinder]https://github.com/ROJE100/StudyWpf/blob/main/capture/KakaoTalk_20220602_171750721.png?raw=true
  실행화면
  
  <br/>
