@@ -20,5 +20,8 @@ C#WPF 학습리포지토리
 - 네이버 영화 앱 만들기([클릭](https://github.com/ROJE100/StudyWpf/tree/main/portfolio))
 
 ## Day 4일차
-- 네이버 영화 앱 마무리
+- 네이버 영화 앱 마무리([클릭](https://github.com/ROJE100/StudyWpf/tree/main/portfolio))
 - 네이버 뉴스검색 앱
+
+## Day 5일차
+- MVVM 패턴 학습
