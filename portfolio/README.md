@@ -2,14 +2,14 @@
 
 <br/>
 
-##Naver 영화검색
--WPF(.NET Framework 4.7.2 / C#)
- -MahApps.Metro MetroUI/Morden UI
- -Netonsofr.Json
- -Naver OpenAPI
- -Google.Apis.Youtube.3
- -CefSharp webBrowser component
- `EntityFramework DB
+## Naver 영화검색
+- WPF(.NET Framework 4.7.2 / C#)
+ - MahApps.Metro MetroUI/Morden UI
+ - Netonsofr.Json
+ - Naver OpenAPI
+ - Google.Apis.Youtube.3
+ - CefSharp webBrowser component
+ ` EntityFramework DB
  
  <br/>
  
