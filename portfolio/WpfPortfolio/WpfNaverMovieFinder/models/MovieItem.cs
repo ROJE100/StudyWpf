@@ -5,7 +5,7 @@
         public string Title { get; set; }
         public string Link { get; set; }
         public string Image { get; set; }
-        public string Subtitle { get; set; }
+        public string SubTitle { get; set; }
         public string PubDate { get; set; }
         public string Director { get; set; }
         public string Actor { get; set; }
@@ -17,7 +17,7 @@
             Title = title;
             Link = link;
             Image = image;
-            Subtitle = subtitle;
+            SubTitle = subtitle;
             PubDate = pubDate;
             Director = director;
             Actor = actor;

@@ -9,7 +9,7 @@
     xmlns:local="clr-namespace:WpfNaverMovieFinder"
     mc:Ignorable="d"
     Title="Naver MovieFinder v2.0"
-    Height="650" Width="1024" ResizeMode="NoResize" ShowTitleBar="True">
+    Height="650" Width="1024" ResizeMode="NoResize" ShowTitleBar="True" Icon="Naver_icon.png">
     <mah:MetroWindow.IconTemplate>
         <DataTemplate>
             <iconPacks:PackIconForkAwesome Kind="YoutubePlay" Margin="5,7,0,0" />
@@ -40,7 +40,9 @@
                      mah:TextBoxHelper.UseFloatingWatermark="True"
                      mah:TextBoxHelper.ClearTextButton="True"
                      KeyDown="txtSearchName_KeyDown" />
-            <Button x:Name="btnSearch" Width="130" Margin="5,10" FontSize="14"
+            <Button x:Name="btnSearch" Width="130" Height="60" Margin="5,10" 
+                    Style="{StaticResource MahApps.Styles.Button.MetroSquare.Accent}"
+                    FontSize="14"
                     Content="검색" Click="btnSearch_Click">
                 <Button.ContentTemplate>
                     <DataTemplate>
@@ -77,7 +79,8 @@
         <!--버튼 영역-->
         <StackPanel Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="3" Orientation="Horizontal">
             <Button x:Name="btnAddWatchList" Content="즐겨찾기 추가" Margin="10"
-                    Width="150" FontSize="12" Click="btnAddWatchList_Click" >
+                    Style="{StaticResource MahApps.Styles.Button.MetroSquare.Accent}"
+                    Width="150" Height="60" FontSize="12" Click="btnAddWatchList_Click" >
                 <Button.ContentTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -89,7 +92,8 @@
                 </Button.ContentTemplate>
             </Button>
             <Button x:Name="btnViewWatchList" Content="즐겨찾기 보기" Margin="10"
-                    Width="150" FontSize="12" Click="btnViewWatchList_Click" >
+                    Style="{StaticResource MahApps.Styles.Button.MetroSquare.Accent}"
+                    Width="150" Height="60" FontSize="12" Click="btnViewWatchList_Click" >
                 <Button.ContentTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -101,7 +105,8 @@
                 </Button.ContentTemplate>
             </Button>
             <Button x:Name="btnDelWatchList" Content="즐겨찾기 삭제" Margin="10"
-                    Width="150" FontSize="12" Click="btnDelWatchList_Click" >
+                    Style="{StaticResource MahApps.Styles.Button.MetroSquare.Accent}"
+                    Width="150" Height="60" FontSize="12" Click="btnDelWatchList_Click" >
                 <Button.ContentTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -113,7 +118,8 @@
                 </Button.ContentTemplate>
             </Button>
             <Button x:Name="btnWatchTrailer" Content="예고편 보기" Margin="10"
-                    Width="150" FontSize="12" Click="btnWatchTrailer_Click" >
+                    Style="{StaticResource MahApps.Styles.Button.MetroSquare.Accent}"
+                    Width="150" Height="60" FontSize="12" Click="btnWatchTrailer_Click" >
                 <Button.ContentTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -125,7 +131,8 @@
                 </Button.ContentTemplate>
             </Button>
             <Button x:Name="btnNaverMovie" Content="네이버 영화" Margin="10"
-                    Width="150" FontSize="12" Click="btnNaverMovie_Click" >
+                    Style="{StaticResource MahApps.Styles.Button.MetroSquare.Accent}"
+                    Width="150" Height="60" FontSize="12" Click="btnNaverMovie_Click" >
                 <Button.ContentTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
