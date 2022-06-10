@@ -12,7 +12,7 @@ namespace WpfSmartHomeMonitoringApp.ViewModels
     {
         public MainViewModel()
         {
-            DisplayName = "SmartHome Monitoring v2.0"; // 윈도우 타이틀, 제목
+            DisplayName = "SmartHome Monitoring v2.0"; // 윈도우 타이틀, 제목 MainView.xaml에서 Title 내용을 삭제
         }
 
         public void LoadDataBaseView()
@@ -24,6 +24,13 @@ namespace WpfSmartHomeMonitoringApp.ViewModels
         {
             ActivateItemAsync(new HistoryViewModel());
         }
+        
+        public void LoadRealTimeView()
+        {
+            ActivateItemAsync(new RealTimeViewModel());
+        }
+
+
         public void ExitProgram()
         {
             Environment.Exit(0); //오류 없이 프로그램 종료 0 

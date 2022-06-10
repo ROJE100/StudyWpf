@@ -51,6 +51,7 @@
 
             <Label Grid.Row="0" Grid.Column="0" Content="DataBase Monitoring" 
                Style="{StaticResource MahApps.Styles.Label}"
+                   VerticalAlignment="Center"
                FontSize="30" FontWeight="Bold" />
         </StackPanel>
 
