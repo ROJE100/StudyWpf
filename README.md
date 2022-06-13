@@ -37,3 +37,6 @@ C#WPF 학습리포지토리
   - MQTT Broker 프로그램
   - M!TT Monitoring 프로그램
 ([클릭](https://github.com/ROJE100/StudyWpf/tree/main/portfolio#smarthome-%EB%AA%A8%EB%8B%88%ED%84%B0%EB%A7%81%EC%95%B1))
+
+## Day 9
+- SmartHome 시스템 개발완료
