@@ -207,15 +207,28 @@
     </ApplicationDefinition>
     <Compile Include="Bootstrapper.cs" />
     <Compile Include="Modles\DivisionModel.cs" />
+    <Compile Include="Modles\SmartHomeModel.cs" />
+    <Compile Include="ViewModels\CustomInfoViewModel.cs" />
+    <Compile Include="ViewModels\CustomPopupViewModel.cs" />
     <Compile Include="ViewModels\DataBaseViewModel.cs" />
     <Compile Include="ViewModels\HistoryViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Views\CustomInfoView.xaml.cs">
+      <DependentUpon>CustomInfoView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\HistoryView.xaml.cs">
       <DependentUpon>HistoryView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\RealTimeView.xaml.cs">
       <DependentUpon>RealTimeView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\CustomPopupView.xaml.cs">
+      <DependentUpon>CustomPopupView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\CustomInfoView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\DataBaseView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -242,6 +255,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\RealTimeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\CustomPopupView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

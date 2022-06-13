@@ -162,7 +162,15 @@ namespace WpfSmartHomeMonitoringApp.ViewModels
         private void SetDataBase(string message/*,string topic*/)
         {
             var currDatas = JsonConvert.DeserializeObject<Dictionary<string, string>>(message); //Dictionary<key,
-            //
+
+            var smartHomeModel = new SmartHomeModel();
+            Debug.WriteLine(currDatas);
+            smartHomeModel.DevId = currDatas["DevId"];
+            smartHomeModel.CurrTime = DateTime.Parse(currDatas["CurrTime"]);
+            smartHomeModel.Temp =double.Parse( currDatas["Temp"]);
+            smartHomeModel.Humid =double.Parse( currDatas["Humid"]);
+
+
 
             Debug.WriteLine(currDatas);
 

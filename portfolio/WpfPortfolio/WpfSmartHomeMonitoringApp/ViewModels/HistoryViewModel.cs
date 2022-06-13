@@ -1,5 +1,7 @@
 ﻿using Caliburn.Micro;
 using OxyPlot;
+using OxyPlot.Legends;
+using OxyPlot.Series;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -7,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 using WpfSmartHomeMonitoringApp.Helpers;
 using WpfSmartHomeMonitoringApp.Modles;
 
@@ -22,7 +25,7 @@ namespace WpfSmartHomeMonitoringApp.ViewModels
         private string endDate;
         private string initEndDate;
         private int totalCount;
-        private PlotModel smartHomeModel;
+        private PlotModel historyModel; // OxyPlot : 220613, SMG. smartHomeModel -> hisyoryModel로 변경
         /*Divisions
          * DivisionVal
          * SelectedDivision
@@ -31,7 +34,7 @@ namespace WpfSmartHomeMonitoringApp.ViewModels
          * EndDate
          * InitEndDate
          * TotalCount
-            SearchIoTData,SmartHomeModel*/
+            SearchIoTData,HistoryModel*/
 
         public BindableCollection<DivisionModel> Divisions
         {
@@ -89,12 +92,12 @@ namespace WpfSmartHomeMonitoringApp.ViewModels
                 NotifyOfPropertyChange(() => TotalCount);
             }
         }
-        public PlotModel SmartHomeModel
+        public PlotModel HistoryModel //220613, SMG. smartHomeModel -> hisyoryModel로 변경
         {
-            get => smartHomeModel; set
+            get => historyModel; set
             {
-                smartHomeModel = value;
-                NotifyOfPropertyChange(() => SmartHomeModel);
+                historyModel = value;
+                NotifyOfPropertyChange(() => HistoryModel);
         
             }
         }
@@ -143,7 +146,7 @@ namespace WpfSmartHomeMonitoringApp.ViewModels
 
             using(SqlConnection conn=new SqlConnection(Commons.CONNSTRING))
             {
-                string strQuery = @"SELECT Id,CurrTime,Temp,Humid
+                string strQuery = @"SELECT Id,DevId,CurrTime,Temp,Humid
                                     FROM TblSmartHome
                                     WHERE DevId=@DevId
                                     AND CurrTime BETWEEN @StartDate AND @EndDate
@@ -162,15 +165,58 @@ namespace WpfSmartHomeMonitoringApp.ViewModels
 
                     SqlDataReader reader = cmd.ExecuteReader();
 
-                    var i = 0;
-                    while(reader.Read())
+                    int i = 0;
+                    //start of chart process 220613 추가
+                    PlotModel tmp = new PlotModel() 
                     {
-                        var temp=reader["Temp"];
+                        Title = $"{SelectedDivision.DivisionVal}Histories" 
+                    }; // 220613 차트처리 임시 플롯모델 >> 다른곳에 전달하기 위함
+
+                    var l = new Legend //범례,OxyPlot.Wpf > LegendsDemo 참조
+                    {
+                        LegendBorder = OxyColors.Black,
+                        LegendBackground = OxyColor.FromAColor(200, OxyColors.White),
+                        LegendPosition = LegendPosition.RightTop,
+                        LegendPlacement = LegendPlacement.Inside
+                    };
+                    tmp.Legends.Add(l);
+                    
+                    LineSeries seriesTemp = new LineSeries 
+                    {
+                        Color= OxyColor.FromRgb(72,159,22), 
+                        Title = "Temperature",
+                        MarkerSize=4,
+                        MarkerType=MarkerType.Circle 
+                    }; // 온도 값을 라인차트로 담을 객체
+
+                    LineSeries seriesHumid = new LineSeries
+                    {
+                        Color = OxyColor.FromRgb(179, 122, 31),
+                        Title = "Humidity",
+                        MarkerType = MarkerType.Triangle
+                    };
+                     while(reader.Read())
+                    {
+                        //var temp=reader["Temp"];
                         //Temp,Humid 차트데이터를 생성
+                        var smartHomeModel = new SmartHomeModel();
+                        smartHomeModel.DevId = reader["DevId"].ToString();
+                        smartHomeModel.CurrTime = DateTime.Parse(reader["currTime"].ToString());
+                        smartHomeModel.Temp = Convert.ToDouble(reader["Temp"]);
+                        smartHomeModel.Humid = Convert.ToDouble(reader["Humid"]);
+
+                        seriesTemp.Points.Add(new DataPoint(i,Convert.ToDouble(reader["Temp"])));
+                        seriesHumid.Points.Add(new DataPoint(i,Convert.ToDouble(reader["Humid"])));
                         i++;
                     }
 
-                    TotalCount = i;
+                    TotalCount = i;   // 검색한 데이터 총 갯수
+
+                    
+                    tmp.Series.Add(seriesTemp);
+                    tmp.Series.Add(seriesHumid);
+
+                    HistoryModel = tmp;
                 }
                 catch (Exception ex)
                 {
