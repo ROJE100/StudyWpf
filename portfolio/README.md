@@ -36,15 +36,15 @@
 <br/>
 
 ## SmartHome 모니터링앱
- [이전](https://github.com/ROJE100/StudyWpf)
--WPF(.Net Framwork 4.7.2 / C#)
- -MahApps.Metro
- -Caliburn.Micro
- -LiveCharts
- -OxyPlot.WPF
- -M2Mqtt
- -Newtonsofr.Json
- -SQLServer DB
+[이전](https://github.com/ROJE100/StudyWpf)
+ - WPF(.Net Framwork 4.7.2 / C#)
+   - MahApps.Metro
+   - Caliburn.Micro
+   - LiveCharts
+   - OxyPlot.WPF
+   - M2Mqtt
+   - Newtonsofr.Json
+   - SQLServer DB
  
  <br/>
  
